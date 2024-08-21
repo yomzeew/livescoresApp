@@ -7,6 +7,9 @@ module.exports = {
         '105':'450px',
         '128':'512px'
       },
+      width:{
+        '15':'3px',
+      },
       borderWidth:{
         '1':'1px'
 
