@@ -62,7 +62,7 @@ const RegistrationForm = () => {
                             </TouchableOpacity>
                         </View>
                     </View>
-                    <TouchableOpacity onPress={()=>{navigation.navigate('dashboard')}} className="bg-blue-900 flex flex-row w-80 h-14 rounded-3xl justify-center items-center">
+                    <TouchableOpacity onPress={()=>{navigation.navigate('favourite-screen')}} className="bg-blue-900 flex flex-row w-80 h-14 rounded-3xl justify-center items-center">
                         <Text className="text-base text-white">Submit</Text>
                     </TouchableOpacity>
                     <View className="flex flex-row items-center justify-center space-x-2">
