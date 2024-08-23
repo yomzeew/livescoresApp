@@ -15,6 +15,7 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/FontAwesome6";
 import OTPInput from "./OtpInput";
+import { ApiRequests } from "./models/ApiRequests";
 const EmailVerification = () => {
     const navigation = useNavigation();
     const [email, setEmail] = useState("");
@@ -23,24 +24,47 @@ const EmailVerification = () => {
     const [otpView, setOtpView] = useState(false);
     const [errormessage, setErrorMessage] = useState("Verify your email address to continue");
     const EmailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    const [isLoading, setIsLoading] = useState(false);
     useEffect(() => {
         setEmailView(true);
-        setErrorMessage('');
+        setErrorMessage("");
         setOtpView(false);
+        setIsLoading(false)
     }, []);
-    const emailVerification = async() => {
+    const emailVerification = async () => {
         const verifyEmail = EmailRegex.test(email);
+        if(!email) {
+            setErrorMessage('Enter email address to continue')
+            return false;
+        }
+        if(!verifyEmail) {
+            setErrorMessage('Invalid email address');
+            return false;
+        }
     };
-    const handleVerification = async() => {
-        if(emailView) {
-            setEmailView(false);
-            setOtpView(true)
+    const handleVerification = async () => {
+        if (emailView) {
+            setIsLoading(true);
+            //const request = await ApiRequests('verifyEmail',{ email: email });
+            const request = emailVerification()
+            if(!request) {
+                setIsLoading(false);
+                setEmail('');
+                setErrorMessage('Verification failed');
+                setOtpView(false);
+                setEmailView(true)
+                return
+            }
+            else {
+                setIsLoading(false);
+                setEmailView(false);
+                setOtpView(true)
+                setErrorMessage('An OTP has been sent to the submitted email'); 
+            }
+        } else {
+            navigation.navigate("registration-form");
         }
-        else {
-            navigation.navigate('registration-form');
-        }
-    }
-    console.log(otp, email)
+    };
     return (
         <View className="h-full w-full flex">
             <SafeAreaView className="flex-1 pt-12 items-center space-y-7">
@@ -48,29 +72,28 @@ const EmailVerification = () => {
                 <Text className={`text-center px-3 text-red-600`}>{errormessage}</Text>
                 <View className="flex space-y-8">
                     {emailView && (
-             
-           <View className="block">
+                        <View className="block">
                             <Text>Email</Text>
                             <TextInput
                                 // onFocus={()=>{setMessage('Verify your email address to continue')}}
                                 onChangeText={(text) => {
-                                    setEmail(text)
+                                    setEmail(text);
                                 }}
                                 className="border-2 border-slate-300 flex flex-row w-80 h-14 rounded-3xl pl-5 items-center"
                             />
                         </View>
-         )}
-        {otpView && (
-             <View className="block">
+                    )}
+                    {otpView && (
+                        <View className="block">
                             <Text>Otp</Text>
                             <OTPInput />
                         </View>
-         )}
+                    )}
                     <TouchableOpacity
                         onPress={handleVerification}
                         className="bg-blue-900 flex flex-row w-80 h-14 rounded-3xl justify-center items-center"
                     >
-                        <Text className="text-base text-white">Verify</Text>
+                        {!isLoading ? <Text className="text-base text-white">Verify</Text> : <ActivityIndicator size={20} color={`#fff`} />}
                     </TouchableOpacity>
                     <View className="flex flex-row items-center justify-center space-x-2">
                         <Text className="text-base">Already Have an Account</Text>

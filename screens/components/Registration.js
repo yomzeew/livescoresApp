@@ -3,13 +3,13 @@ import { StyleSheet, View, TouchableOpacity, Text, SafeAreaView, ActivityIndicat
 import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/FontAwesome6";
 import { authMethods } from "./data/auth_methods";
-import  { AuthSession }  from "./models/Auth_Session";
+import { AuthSession } from "./models/Auth_Session";
 const Registration = () => {
     const [isLoading, setIsLoading] = useState(false);
     const navigation_test = useNavigation();
-    useEffect(()=>{
+    useEffect(() => {
         setIsLoading(false);
-    },[])
+    }, []);
     const handleOnboarding = () => {
         setIsLoading(true);
         setTimeout(() => {
@@ -17,7 +17,7 @@ const Registration = () => {
             //navigation.navigate("registration");
             navigation_test.navigate("verification-screen");
         }, 3000);
-    }
+    };
     return (
         <View className="h-full w-full flex">
             <SafeAreaView className="flex-1 pt-12 items-center space-y-6">
@@ -25,12 +25,17 @@ const Registration = () => {
                 <Text className="text-center px-3">Create an account to save your teams, clubs and league preferences</Text>
                 <View className="flex space-y-8">
                     <View className="flex space-y-6">
-                        { authMethods.map((item,index)=>(
-                            <TouchableOpacity onPress={()=>{AuthSession(item.id)}} className="border-2 border-slate-300 flex flex-row w-80 h-14 rounded-3xl justify-center items-center space-x-2">
+                        {authMethods.map((item, index) => (
+                            <TouchableOpacity
+                                onPress={() => {
+                                    AuthSession(item.id);
+                                }}
+                                className="border-2 border-slate-300 flex flex-row w-80 h-14 rounded-3xl justify-center items-center space-x-2"
+                            >
                                 <Image source={item.logo} resizeMode="contain" className="h-8 w-8" />
                                 <Text>{item.text}</Text>
                             </TouchableOpacity>
-                        )) }
+                        ))}
                     </View>
                     <View className="flex flex-row items-center space-x-2">
                         <View className="h-[2px] w-36 bg-slate-300"></View>
@@ -38,24 +43,40 @@ const Registration = () => {
                         <View className="h-[2px] w-36 bg-slate-300"></View>
                     </View>
                     <View>
-                        <TouchableOpacity onPress={handleOnboarding} className="border-2 border-slate-300 flex flex-row w-80 h-14 rounded-3xl justify-center items-center space-x-2">
-                            { !isLoading ? (
+                        <TouchableOpacity
+                            onPress={handleOnboarding}
+                            className="border-2 border-slate-300 flex flex-row w-80 h-14 rounded-3xl justify-center items-center space-x-2"
+                        >
+                            {!isLoading ? (
                                 <View className="flex flex-row items-center space-x-2">
-                                    <Image source={require('../../assets/2674096_object_email_web_essential_icon.png')} resizeMode="contain" className="h-8 w-8" />
+                                    <Image
+                                        source={require("../../assets/2674096_object_email_web_essential_icon.png")}
+                                        resizeMode="contain"
+                                        className="h-8 w-8"
+                                    />
                                     <Text>Sign up with Email</Text>
                                 </View>
                             ) : (
                                 <ActivityIndicator color={`#000`} size={20} />
-                            ) }
+                            )}
                         </TouchableOpacity>
                     </View>
                     <View className="flex flex-row items-center justify-center space-x-2">
                         <Text className="">Already Have an Account</Text>
-                        <TouchableOpacity onPress={()=>{navigation_test.navigate('login')}}><Text className="text-base underline font-bold">Login</Text></TouchableOpacity>
+                        <TouchableOpacity
+                            onPress={() => {
+                                navigation_test.navigate("login");
+                            }}
+                        >
+                            <Text className="text-base underline font-bold">Login</Text>
+                        </TouchableOpacity>
                     </View>
                 </View>
                 <View className="px-3 absolute bottom-4">
-                    <Text className="">By using this app, I agree to the <Text className="text-base underline font-bold">Terms of Service</Text> and <Text className="text-base underline font-bold">Privacy Policy</Text></Text>
+                    <Text className="">
+                        By using this app, I agree to the <Text className="text-base underline font-bold">Terms of Service</Text> and{" "}
+                        <Text className="text-base underline font-bold">Privacy Policy</Text>
+                    </Text>
                 </View>
             </SafeAreaView>
         </View>
