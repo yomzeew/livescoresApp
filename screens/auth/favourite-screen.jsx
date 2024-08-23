@@ -91,7 +91,7 @@ const Favourite = ({ navigation }) => {
             <TouchableOpacity onPress={() => navigation.navigate('dashboard')} className=" bg-red-800 w-20 h-20"><Text>Click me</Text></TouchableOpacity>
              */}
             <View className="w-full h-1/6 bg-blue-950 flex flex-row items-center">
-                <Button icon="undo" textColor="gray" onPress={() => console.log("back to authentication")}>
+                <Button icon="undo" textColor="gray" onPress={() => navigation.navigate('onboarding')}>
                     <Text>Back</Text>
                 </Button>
                 <View className="">

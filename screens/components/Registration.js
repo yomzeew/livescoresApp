@@ -51,7 +51,7 @@ const Registration = () => {
                     </View>
                     <View className="flex flex-row items-center justify-center space-x-2">
                         <Text className="">Already Have an Account</Text>
-                        <TouchableOpacity><Text className="text-base underline font-bold">Login</Text></TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{navigation_test.navigate('login')}}><Text className="text-base underline font-bold">Login</Text></TouchableOpacity>
                     </View>
                 </View>
                 <View className="px-3 absolute bottom-4">

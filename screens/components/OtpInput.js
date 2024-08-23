@@ -23,10 +23,11 @@ const OTPInput = () => {
         setOtp(newOtp);
 
         if(value !== '') {
-            if(index < 5) {
-                inputRefs.current[index + 1].focus();
-            } else {
+            if(index === 5) {
+                return
                 alert('INvalid Otp')
+            } else if (index < 5) {
+                inputRefs.current[index + 1].focus();
             }
         }
     };

@@ -4,7 +4,7 @@ import * as AuthSessionAsync from "expo-auth-session";
 import { Platform } from "react-native";
 export const AuthSession = (type)=>{
     console.log(type)
-    const [useinfo, setUserInfo] = useState();
+    const [useinfo, setUserInfo] = useState([]);
     const [auth, setAuth] = useState();
     const [requireRefresh, setRequireRefresh] = useState(false);
     const [request, response, promptAsync] = Google.useAuthRequest({
@@ -57,7 +57,7 @@ export const AuthSession = (type)=>{
     //     const getPersistedAuth
     // })
 
-    useEffect(()=>{
+    const Authenticate = ()=>{
         console.log(response);
         if (response?.type === "success") {
             setAuth(response.authentication);
@@ -65,5 +65,5 @@ export const AuthSession = (type)=>{
                 getUserData()         
             }
         }
-    },[])
+    }
 };

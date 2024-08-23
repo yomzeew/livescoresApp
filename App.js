@@ -7,6 +7,7 @@ import RegistrationForm from "./screens/components/RegistrationForn";
 import EmailVerification from "./screens/components/EmailVerification";
 import Dashboard from "./screens/tabs/dashboard";
 import Favourite from "./screens/auth/favourite-screen";
+import Login from "./screens/components/Login";
 export default function App() {
     const Stack = createNativeStackNavigator();
     return (
@@ -19,8 +20,9 @@ export default function App() {
                 <Stack.Screen name="registration" component={Registration} />
                 <Stack.Screen name="registration-form" component={RegistrationForm} />
                 <Stack.Screen name="verification-screen" component={EmailVerification} />
-                <Stack.Screen name="dashboard" component={Dashboard} options={{ headerShown: false }}/>
-                <Stack.Screen name="favourite-screen" component={Favourite} options={{ headerShown: false }}/>
+                <Stack.Screen name="dashboard" component={Dashboard} />
+                <Stack.Screen name="favourite-screen" component={Favourite} />
+                <Stack.Screen name="login" component={Login} />
             </Stack.Navigator>          
         </NavigationContainer>
     );
