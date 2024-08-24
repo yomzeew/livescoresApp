@@ -13,7 +13,7 @@ const Favourite = ({ navigation }) => {
                     // icon="undo"
                     iconName="keyboard-backspace"
                     color="gray"
-                    onPress={() => navigation.goBack()}
+                    onPress={() => navigation.navigate('onboarding')}
                     text="Back"
                     className="mr-2"
                 />
