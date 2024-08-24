@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { StyleSheet, View, TouchableOpacity, Text, SafeAreaView, ActivityIndicator, ImageBackground, StatusBar, Image } from "react-native";
+import { StyleSheet, View, TouchableOpacity, Text, SafeAreaView, ActivityIndicator, Alert, StatusBar, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/FontAwesome6";
 import { authMethods } from "./data/auth_methods";
-import { AuthSession } from "./models/Auth_Session";
+import { signInWithGoogle } from './models/googleAuth';
+import { signInWithApple } from './models/appleAuth';
+import { signInWithFacebook } from './models/facebookAuth';
 const Registration = () => {
     const [isLoading, setIsLoading] = useState(false);
     const navigation_test = useNavigation();
@@ -18,8 +20,36 @@ const Registration = () => {
             navigation_test.navigate("verification-screen");
         }, 3000);
     };
+    const handleAuthSuccess = (authData) => {
+        console.log('Authentication success:', authData);
+        // Handle the authentication response, e.g., save tokens, navigate to the next screen, etc.
+      };
+    
+      const handleSignIn = async (provider) => {
+        console.log(provider)
+        try {
+          let authData;
+          switch (provider) {
+            case 'Google':
+              authData = await signInWithGoogle();
+              break;
+            case 'Apple':
+              authData = await signInWithApple();
+              break;
+            case 'Facebook':
+              authData = await signInWithFacebook();
+              break;
+            default:
+              throw new Error('Unknown provider');
+          }
+          handleAuthSuccess(authData);
+        } catch (error) {
+          Alert.alert('Authentication Error', error.message);
+        }
+      };
     return (
         <View className="h-full w-full flex">
+            <StatusBar />
             <SafeAreaView className="flex-1 pt-12 items-center space-y-6">
                 <Text className="font-bold text-3xl text-zinc-700">Create an Account</Text>
                 <Text className="text-center px-3">Create an account to save your teams, clubs and league preferences</Text>
@@ -27,9 +57,8 @@ const Registration = () => {
                     <View className="flex space-y-6">
                         {authMethods.map((item, index) => (
                             <TouchableOpacity
-                                onPress={() => {
-                                    AuthSession(item.id);
-                                }}
+                                key={item.text}
+                                onPress={() => handleSignIn(item.id)}
                                 className="border-2 border-slate-300 flex flex-row w-80 h-14 rounded-3xl justify-center items-center space-x-2"
                             >
                                 <Image source={item.logo} resizeMode="contain" className="h-8 w-8" />

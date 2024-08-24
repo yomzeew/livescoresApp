@@ -57,6 +57,13 @@ const Login = () => {
             };
             //const request = await ApiRequests('verifyEmail',{ email: email });
             const request = "test";
+            if(!request) {
+                setErrorMessage('Attempt to Login has failed');
+                return;
+            }
+            else {
+                navigation.navigate('dashboard');
+            }
         }
     };
     return (
@@ -96,16 +103,14 @@ const Login = () => {
                         </View>
                     </View>
                     <TouchableOpacity
-                        onPress={() => {
-                            navigation.navigate("dashboard");
-                        }}
+                       onPress={handleLoginVerification}
                         className="bg-blue-900 flex flex-row w-80 h-14 rounded-3xl justify-center items-center"
                     >
                         <Text className="text-base text-white">Submit</Text>
                     </TouchableOpacity>
                     <View className="flex flex-row items-center justify-center space-x-2">
                         <Text className="text-base">Don't Have an Account</Text>
-                        <TouchableOpacity onPress={handleLoginVerification}>
+                        <TouchableOpacity onPress={()=>{navigation.navigate('registration')}}>
                             <Text className="text-lg underline font-bold">Register</Text>
                         </TouchableOpacity>
                     </View>
