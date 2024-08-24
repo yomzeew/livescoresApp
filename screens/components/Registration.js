@@ -27,6 +27,7 @@ const Registration = () => {
                     <View className="flex space-y-6">
                         {authMethods.map((item, index) => (
                             <TouchableOpacity
+                                key={index}
                                 onPress={() => {
                                     AuthSession(item.id);
                                 }}
