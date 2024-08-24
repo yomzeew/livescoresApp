@@ -26,6 +26,43 @@ const RegistrationForm = () => {
     const hasUpperCase = /[A-Z]/;
     const hasLowerCase = /[a-z]/;
     const navigation = useNavigation();
+    useEffect(() => {
+        setIsSecureEntry(true);
+        setConfirmPassword('');
+        setPassword('');
+        setFullName('');
+        setErrorMessage('')
+    }, []);
+    const handleVerification = () => {
+        if(!fullname) {
+            setErrorMessage('Enter your fullname');
+            return
+        }
+        if(!password) {
+            setErrorMessage('Enter your password');
+            return
+        }
+        if(!confirmPassword) {
+            setErrorMessage('Confirm your password');
+            return
+        }
+        const verifyPassword = hasDigit.test(password) && hasSpecialChar.test(password) && hasLowerCase.test(password) && hasUpperCase.test(password);
+        const validatePasswordLength = password.length;
+        if(!verifyPassword) {
+            setErrorMessage('Create a strong password e.g LiveScore@2024');
+            return;
+        }
+        if(validatePasswordLength < 8) {
+            setErrorMessage('Password must be more than 8 characters');
+            return;
+        }
+        if(confirmPassword !== password) {
+            setErrorMessage('Passwords do not match');
+            return;
+        }
+        navigation.navigate("favourite-screen");
+    }
+
     return (
         <View className="h-full w-full flex">
             <SafeAreaView className="flex-1 pt-12 items-center space-y-7">
@@ -47,9 +84,7 @@ const RegistrationForm = () => {
                             <TouchableOpacity
                                 className="absolute pr-3"
                                 onPress={() => {
-                                    setIsSecureEntry((current) => {
-                                        current ? false : true;
-                                    });
+                                    setIsSecureEntry(isSecureEntry ? false : true);
                                 }}
                             >
                                 <Icon name={`${isSecureEntry ? "eye" : "eye-slash"}`} size={20} color="grey" />
@@ -67,9 +102,7 @@ const RegistrationForm = () => {
                             <TouchableOpacity
                                 className="absolute pr-3"
                                 onPress={() => {
-                                    setIsSecureEntry((current) => {
-                                        current ? false : true;
-                                    });
+                                    setIsSecureEntry(isSecureEntry ? false : true);
                                 }}
                             >
                                 <Icon name={`${isSecureEntry ? "eye" : "eye-slash"}`} size={20} color="grey" />
@@ -77,9 +110,7 @@ const RegistrationForm = () => {
                         </View>
                     </View>
                     <TouchableOpacity
-                        onPress={() => {
-                            navigation.navigate("favourite-screen");
-                        }}
+                        onPress={handleVerification}
                         className="bg-blue-900 flex flex-row w-80 h-14 rounded-3xl justify-center items-center"
                     >
                         <Text className="text-base text-white">Submit</Text>

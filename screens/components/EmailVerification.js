@@ -28,6 +28,8 @@ const EmailVerification = () => {
     useEffect(() => {
         setEmailView(true);
         setErrorMessage("");
+        setEmail('');
+        setOtp('')
         setOtpView(false);
         setIsLoading(false)
     }, []);

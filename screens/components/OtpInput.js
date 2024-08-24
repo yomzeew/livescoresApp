@@ -12,7 +12,7 @@ const OTPInput = () => {
         if(otpValue === '12345') {
             setIsAuthenticated(true);
         } else {
-            alert('Invalid OTP');
+            ""
         }
         return isAuthenticated;
     }
@@ -23,10 +23,10 @@ const OTPInput = () => {
         setOtp(newOtp);
 
         if(value !== '') {
-            if (index < 4) {
+            if (index < 5) {
                 inputRefs.current[index + 1].focus();
             }
-            else {
+            else if(index === 5) {
                 authenticateOtp();
             }
         }

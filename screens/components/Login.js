@@ -29,6 +29,8 @@ const Login = () => {
     useEffect(() => {
         setErrorMessage("Login to continue using your Account");
         setIsSecureEntry(true);
+        setEmail('');
+        setPassword('');
     }, []);
     const handleLoginVerification = () => {
         if (!email) {
@@ -95,7 +97,7 @@ const Login = () => {
                             <TouchableOpacity
                                 className="absolute pr-3"
                                 onPress={() => {
-                                    setIsSecureEntry(isSecureEntry === "true" ? false : true);
+                                    setIsSecureEntry(isSecureEntry ? false : true);
                                 }}
                             >
                                 <Icon name={`${isSecureEntry ? "eye" : "eye-slash"}`} size={20} color="grey" />
