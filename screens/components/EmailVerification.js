@@ -41,26 +41,19 @@ const EmailVerification = () => {
             setErrorMessage('Invalid email address');
             return false;
         }
+        else {
+            setIsLoading(true);
+            setTimeout(() => {
+                setEmailView(false);
+                setOtpView(true);
+                setErrorMessage("")
+            }, 3000);
+        }
     };
     const handleVerification = async () => {
         if (emailView) {
-            setIsLoading(true);
-            //const request = await ApiRequests('verifyEmail',{ email: email });
-            const request = emailVerification()
-            if(!request) {
-                setIsLoading(false);
-                setEmail('');
-                setErrorMessage('Verification failed');
-                setOtpView(false);
-                setEmailView(true)
-                return
-            }
-            else {
-                setIsLoading(false);
-                setEmailView(false);
-                setOtpView(true)
-                setErrorMessage('An OTP has been sent to the submitted email'); 
-            }
+            const verification = emailVerification();
+            setIsLoading(false)
         } else {
             navigation.navigate("registration-form");
         }
@@ -97,7 +90,7 @@ const EmailVerification = () => {
                     </TouchableOpacity>
                     <View className="flex flex-row items-center justify-center space-x-2">
                         <Text className="text-base">Already Have an Account</Text>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=> {navigation.navigate('login')}}>
                             <Text className="text-lg underline font-bold">Login</Text>
                         </TouchableOpacity>
                     </View>

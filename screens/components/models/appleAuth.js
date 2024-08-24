@@ -1,4 +1,4 @@
-import * as AppleAuthentication from 'expo-auth-session/providers/facebook';
+import * as AppleAuthentication from 'expo-apple-authentication';
 
 export async function signInWithApple() {
   try {

@@ -2,7 +2,7 @@ import React from "react";
 import { Text, View, StatusBar, Platform } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Button, { CustomButton } from "../components/button";
-import { leagues } from "../../mockData/favourite-screen";
+import { leagues } from "../data/favourite-screen";
 
 const Favourite = ({ navigation }) => {
     return (

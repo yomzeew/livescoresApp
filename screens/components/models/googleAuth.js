@@ -10,7 +10,7 @@ export async function signInWithGoogle() {
     scopes: ['profile', 'email'],
   });
 
-  const result = await promptAsync();
+  const result = await promptAsync()
   if (result.type === 'success') {
     return result.authentication;
   } else {

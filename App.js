@@ -6,7 +6,7 @@ import Registration from './screens/components/Registration';
 import RegistrationForm from "./screens/components/RegistrationForn";
 import EmailVerification from "./screens/components/EmailVerification";
 import Dashboard from "./screens/tabs/dashboard";
-import Favourite from "./screens/auth/favourite-screen";
+import Favourite from "./screens/components/favourite-screen";
 import Login from "./screens/components/Login";
 export default function App() {
     const Stack = createNativeStackNavigator();

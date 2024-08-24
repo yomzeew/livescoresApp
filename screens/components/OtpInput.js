@@ -8,7 +8,7 @@ const OTPInput = () => {
 
     const authenticateOtp = () => {
         const otpValue = otp.join('');
-
+        console.log(otpValue)
         if(otpValue === '12345') {
             setIsAuthenticated(true);
         } else {

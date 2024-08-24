@@ -86,7 +86,7 @@ const RegistrationForm = () => {
                     </TouchableOpacity>
                     <View className="flex flex-row items-center justify-center space-x-2">
                         <Text className="text-base">Already Have an Account</Text>
-                        <TouchableOpacity>
+                        <TouchableOpacity onPress={()=> {navigation.navigate('login')}}>
                             <Text className="text-lg underline font-bold">Login</Text>
                         </TouchableOpacity>
                     </View>

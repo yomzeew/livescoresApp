@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { StyleSheet, View, TouchableOpacity, Text, SafeAreaView, ActivityIndicator, Alert, StatusBar, Image } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Icon from "react-native-vector-icons/FontAwesome6";
-import { authMethods } from "./data/auth_methods";
+import { authMethods } from "../data/auth_methods";
 import { signInWithGoogle } from './models/googleAuth';
 import { signInWithApple } from './models/appleAuth';
 import { signInWithFacebook } from './models/facebookAuth';
