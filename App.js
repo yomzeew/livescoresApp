@@ -12,10 +12,11 @@ export default function App() {
     const Stack = createNativeStackNavigator();
     return (
         <NavigationContainer>
-            <Stack.Navigator screenOptions={{
-                headerShown: false,
-                initialRouteName: "onboarding"
-            }}>
+            <Stack.Navigator
+                initialRouteName="onboarding"
+                screenOptions={{
+                    headerShown: false,
+                }}>
                 <Stack.Screen name="onboarding" component={Onboarding} />
                 <Stack.Screen name="registration" component={Registration} />
                 <Stack.Screen name="registration-form" component={RegistrationForm} />
@@ -23,7 +24,7 @@ export default function App() {
                 <Stack.Screen name="dashboard" component={Dashboard} />
                 <Stack.Screen name="favourite-screen" component={Favourite} />
                 <Stack.Screen name="login" component={Login} />
-            </Stack.Navigator>          
+            </Stack.Navigator>
         </NavigationContainer>
     );
 };
