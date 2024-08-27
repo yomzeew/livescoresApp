@@ -13,7 +13,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Avatar } from "react-native-paper";
 import { List, useTheme } from "react-native-paper";
 
-const Leagues = () => {
+const Leagues = ({ navigation }) => {
   const { colors } = useTheme();
   const [expanded, setExpanded] = useState(null);
 
@@ -57,6 +57,7 @@ const Leagues = () => {
                   title="Item 1"
                   className=" -ml-10"
                   left={(props) => <List.Icon {...props} icon="file" />}
+                  onPress={() => navigation.navigate("stats")}
                 />
               </TouchableOpacity>
               <TouchableOpacity>
