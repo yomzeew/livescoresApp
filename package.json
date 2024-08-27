@@ -9,10 +9,15 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo/vector-icons": "^14.0.2",
+    "@react-native-async-storage/async-storage": "^2.0.0",
     "@react-navigation/bottom-tabs": "^6.6.1",
     "@react-navigation/native": "^6.1.18",
     "@react-navigation/native-stack": "^6.11.0",
     "expo": "~51.0.28",
+    "expo-apple-authentication": "^6.4.2",
+    "expo-auth-session": "^5.5.2",
+    "expo-facebook": "^12.2.0",
     "expo-status-bar": "~1.12.1",
     "nativewind": "^2.0.11",
     "postcss": "^8.4.23",
