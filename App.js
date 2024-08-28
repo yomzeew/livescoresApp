@@ -9,7 +9,6 @@ import Dashboard from "./screens/tabs/dashboard";
 import Favourite from "./screens/components/favourite-screen";
 import Login from "./screens/components/Login";
 import Stats from "./screens/Stats";
-import Favourite from "./screens/auth/favourite-screen";
 import Leagueinfo from "./screens/leagueinfo";
 
 const Stack = createNativeStackNavigator();
