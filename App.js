@@ -8,6 +8,9 @@ import EmailVerification from "./screens/components/EmailVerification";
 import Dashboard from "./screens/tabs/dashboard";
 import Favourite from "./screens/components/favourite-screen";
 import Login from "./screens/components/Login";
+import Stats from "./screens/components/Stats";
+import Leagueinfo from "./screens/components/leagueinfo";
+
 export default function App() {
     const Stack = createNativeStackNavigator();
     return (
@@ -25,7 +28,9 @@ export default function App() {
                 <Stack.Screen name="dashboard" component={Dashboard} />
                 <Stack.Screen name="favourite-screen" component={Favourite} />
                 <Stack.Screen name="login" component={Login} />
+                <Stack.Screen name="stats" component={Stats} />
+                <Stack.Screen name="leagueinfo" component={Leagueinfo} />
             </Stack.Navigator>
         </NavigationContainer>
     );
-}
+};
