@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Dashboard from "./screens/tabs/dashboard";
 import Favourite from "./screens/auth/favourite-screen";
+import Leagueinfo from "./screens/leagueinfo";
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,11 @@ export default function App() {
         <Stack.Screen
           name="dashboard"
           component={Dashboard}
+          options={{ headerShown: false }}
+        />
+          <Stack.Screen
+          name="leagueinfo"
+          component={Leagueinfo}
           options={{ headerShown: false }}
         />
       </Stack.Navigator>
