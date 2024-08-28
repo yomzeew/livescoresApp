@@ -15,13 +15,12 @@ import { List, useTheme } from "react-native-paper";
 import { CountryList } from "../data/countries";
 const Leagues = ({ navigation }) => {
   const { colors } = useTheme();
-  const [expanded, setExpanded] = useState(null);
-  console.log(CountryList);
+  const [expanded, setExpanded] = useState(null)
   const handlePress = (index) => {
     setExpanded(expanded === index ? null : index);
   };
   return (
-    <SafeAreaView className="  flex-1">
+    <SafeAreaView className="h-full w-full flex">
       <StatusBar barStyle="light-content" />
       <ScrollView>
         <View className="  w-full flex-row space-x-5 h-36 pl-3">
@@ -49,6 +48,7 @@ const Leagues = ({ navigation }) => {
               <List.Accordion
               title={item.name}
               expanded={expanded === 0}
+              key={index}
               onPress={() => handlePress(0)}
               className=" bg-white rounded-2xl border-2 border-gray-300"
               left={(props) => <Text {...props}>{item.emoji}</Text>}
