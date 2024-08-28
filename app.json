@@ -9,7 +9,7 @@
     "splash": {
       "image": "./assets/ldd.png",
       "resizeMode": "contain",
-      "backgroundColor": "#DEF9C4"
+      "backgroundColor": "#fff"
     },
     "ios": {
       "supportsTablet": true

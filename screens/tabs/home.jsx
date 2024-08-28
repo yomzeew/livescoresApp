@@ -7,7 +7,8 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Avatar } from "react-native-paper";
 import { useState } from "react";
 
-const Home = ({ navigation }) => {
+const Home = () => {
+    const navigation = useNavigation();
     const [array, setArray] = useState(["", "", "", "", "", "", "", "", ""]);
     return (
         <SafeAreaView className=" bg-gray flex h-full w-full">

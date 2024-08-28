@@ -7,12 +7,12 @@ const getIconName = (routeName) => {
     switch (routeName) {
         case "Home":
             return "home-outline";
-        case "leagues":
-            return "trophy";
-        case "transfers":
+        case "Leagues":
+            return "trophy-outline";
+        case "Transfers":
             return "currency-gbp";
-        case "profile":
-            return "account-outline";
+        case "Following":
+            return "star-outline";
     }
 };
 

@@ -12,11 +12,11 @@ import Logo from "../../assets/ldd.png";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Avatar } from "react-native-paper";
 import { List, useTheme } from "react-native-paper";
-
+import { CountryList } from "../data/countries";
 const Leagues = ({ navigation }) => {
   const { colors } = useTheme();
   const [expanded, setExpanded] = useState(null);
-
+  console.log(CountryList);
   const handlePress = (index) => {
     setExpanded(expanded === index ? null : index);
   };
@@ -44,13 +44,14 @@ const Leagues = ({ navigation }) => {
           <Text className=" font-bold pl-4 text-base">
             International Categories
           </Text>
-          <List.Section className=" px-2">
-            <List.Accordion
-              title="Section 1"
+          <List.Section className="px-2 flex space-y-4">
+            { CountryList.map((item,index)=>(
+              <List.Accordion
+              title={item.name}
               expanded={expanded === 0}
               onPress={() => handlePress(0)}
-              className=" bg-white rounded-2xl border-1 border-gray-300 mt-2"
-              left={(props) => <List.Icon {...props} icon="folder" />}
+              className=" bg-white rounded-2xl border-2 border-gray-300"
+              left={(props) => <Text {...props}>{item.emoji}</Text>}
             >
               <TouchableOpacity  onPress={() => navigation.navigate('leagueinfo')} >
                 <List.Item
@@ -68,7 +69,8 @@ const Leagues = ({ navigation }) => {
                 />
               </TouchableOpacity>
             </List.Accordion>
-            <List.Accordion
+            )) }
+            {/* <List.Accordion
               title="Section 2"
               expanded={expanded === 1}
               onPress={() => handlePress(1)}
@@ -155,7 +157,7 @@ const Leagues = ({ navigation }) => {
                   left={(props) => <List.Icon {...props} icon="file" />}
                 />
               </TouchableOpacity>
-            </List.Accordion>
+            </List.Accordion> */}
           </List.Section>
         </View>
       </ScrollView>
