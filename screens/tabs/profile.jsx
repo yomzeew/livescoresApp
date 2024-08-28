@@ -4,9 +4,10 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import {Avatar} from "react-native-paper";
-import Logo from "../../assets/ldd.png"
+import Logo from "../../assets/ldd.png";
 
 const Profile = () => {
+  const navigation = useNavigation()
   return (
     <SafeAreaView className="  flex-1">
       <StatusBar barStyle="light-content" />
@@ -43,7 +44,7 @@ const Profile = () => {
               </Text>
             </View>
             <View className=" mt-5">
-              <TouchableOpacity className=" bg-[#e8def7] h-10 w-24 ml-auto mr-9 rounded-3xl flex justify-center">
+              <TouchableOpacity onPress={()=> {navigation.navigate('login')}} className=" bg-[#e8def7] h-10 w-24 ml-auto mr-9 rounded-3xl flex justify-center">
                 <Text className=" text-center">SIGN IN</Text>
               </TouchableOpacity>
             </View>
@@ -51,7 +52,7 @@ const Profile = () => {
         </View>
       </View>
       <View className=" w-full mt-2 flex justify-center items-center">
-        <View className=" w-[92%] h-96 bg-white py-8   rounded-2xl">
+        <View className=" w-[92%] h-96 bg-white py-8 rounded-2xl">
           <TouchableOpacity className=" w-full  h-10 flex-row space-x-10 mb-4">
             <View className="mb-auto mt-auto pl-5">
               <MaterialCommunityIcons

@@ -57,6 +57,7 @@ const Leagues = ({ navigation }) => {
                   title="Item 1"
                   className=" -ml-10"
                   left={(props) => <List.Icon {...props} icon="file" />}
+                  onPress={() => navigation.navigate("stats")}
                 />
               </TouchableOpacity>
               <TouchableOpacity>
