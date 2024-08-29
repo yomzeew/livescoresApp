@@ -9,12 +9,13 @@ import Dashboard from "./screens/tabs/dashboard";
 import Favourite from "./screens/components/favourite-screen";
 import Login from "./screens/components/Login";
 import Stats from "./screens/Stats";
+import PlayerInfoPage from "./screens/components/player-info";
 export default function App() {
     const Stack = createNativeStackNavigator();
     return (
         <NavigationContainer>
             <Stack.Navigator
-                initialRouteName="onboarding"
+                initialRouteName="player-info"
                 screenOptions={{
                     headerShown: false,
                 }}>
@@ -26,6 +27,7 @@ export default function App() {
                 <Stack.Screen name="favourite-screen" component={Favourite} />
                 <Stack.Screen name="login" component={Login} />
                 <Stack.Screen name="stats" component={Stats} />
+                <Stack.Screen name="player-info" component={PlayerInfoPage} />
             </Stack.Navigator>
         </NavigationContainer>
     );
