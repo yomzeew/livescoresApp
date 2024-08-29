@@ -22,11 +22,11 @@ const Dashboard = () => {
 
           if (route.name === "Home") {
             iconName = "home-outline"; // Changed icon name
-          } else if (route.name === "leagues") {
+          } else if (route.name === "Leagues") {
             iconName = "trophy-award"; // Changed icon name
-          } else if (route.name === "profile") {
-            iconName = "account"; // Changed icon name
-          } else if (route.name === "transfers") {
+          } else if (route.name === "Following") {
+            iconName = "profile"; // Changed icon name
+          } else if (route.name === "Transfers") {
             iconName = "exchange"; // Changed icon name
           }
 
@@ -44,17 +44,17 @@ const Dashboard = () => {
         options={{ headerShown: false }}
       />
       <Tab.Screen
-        name="leagues"
+        name="Leagues"
         component={Leagues}
         options={{ headerShown: false }}
       />
       <Tab.Screen
-        name="transfers"
+        name="Transfers"
         component={Transfers}
         options={{ headerShown: false }}
       />
       <Tab.Screen
-        name="profile"
+        name="Following"
         component={Profile}
         options={{ headerShown: false }}
       />

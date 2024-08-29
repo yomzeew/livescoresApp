@@ -31,20 +31,20 @@ const RegistrationForm = () => {
         setConfirmPassword('');
         setPassword('');
         setFullName('');
-        setErrorMessage('')
+        setErrorMessage('');
     }, []);
     const handleVerification = () => {
         if(!fullname) {
             setErrorMessage('Enter your fullname');
-            return
+            return;
         }
         if(!password) {
             setErrorMessage('Enter your password');
-            return
+            return;
         }
         if(!confirmPassword) {
             setErrorMessage('Confirm your password');
-            return
+            return;
         }
         const verifyPassword = hasDigit.test(password) && hasSpecialChar.test(password) && hasLowerCase.test(password) && hasUpperCase.test(password);
         const validatePasswordLength = password.length;
@@ -67,7 +67,7 @@ const RegistrationForm = () => {
         <View className="h-full w-full flex">
             <SafeAreaView className="flex-1 pt-12 items-center space-y-7">
                 <Text className="font-bold text-3xl text-zinc-700">Registration</Text>
-                <Text className="text-center px-3">All fields are required</Text>
+                <Text className="text-center px-3 text-red-600">{errorMessage}</Text>
                 <View className="flex space-y-8">
                     <View className="block">
                         <Text>FullName</Text>
