@@ -9,6 +9,7 @@ import Dashboard from "./screens/tabs/dashboard";
 import Favourite from "./screens/components/favourite-screen";
 import Login from "./screens/components/Login";
 import Stats from "./screens/components/Stats";
+import PlayerInfoPage from "./screens/components/player-info";
 import Leagueinfo from "./screens/components/leagueinfo";
 
 export default function App() {
@@ -29,6 +30,7 @@ export default function App() {
                 <Stack.Screen name="favourite-screen" component={Favourite} />
                 <Stack.Screen name="login" component={Login} />
                 <Stack.Screen name="stats" component={Stats} />
+                <Stack.Screen name="player-info" component={PlayerInfoPage} />
                 <Stack.Screen name="leagueinfo" component={Leagueinfo} />
             </Stack.Navigator>
         </NavigationContainer>

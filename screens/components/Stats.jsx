@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { SafeAreaView, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-export default function Stats() {
+export default function Stats({ navigation }) {
   return ( 
     <SafeAreaView>
       <ScrollView>
@@ -18,7 +18,7 @@ export default function Stats() {
 
       <TouchableOpacity className=" flex flex-row  items-center h-10 w-full bg-[#FFFFFF]">
       <View className="w-8 h-8 bg-[#03054B] rounded-full ml-5"></View>
-      <Text className=" text-2xl font-light text-[#03054B] pl-10">Kylain Mbappe</Text>
+      <Text className=" text-2xl font-light text-[#03054B] pl-10" onPress={() => navigation.navigate("player-info")}>Kylain Mbappe</Text>
       <View className="w-8 h-8 bg-[#03054B] rounded-full ml-14"></View>
       <View className="w-8 h-8 bg-[#03054B] rounded-full ml-2 "></View>
       <StatusBar style="auto" />
