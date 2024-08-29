@@ -11,9 +11,9 @@ const Home = () => {
     const navigation = useNavigation();
     const [array, setArray] = useState(["", "", "", "", "", "", "", "", ""]);
     return (
-        <SafeAreaView className=" bg-gray flex h-full w-full">
+        <SafeAreaView className=" bg-gray flex h-full w-full bg-white">
             <StatusBar barStyle="light-content" />
-            <View className="  w-full h-13 flex-row items-center justify-between px-1 pt-2 bg-white">
+            <View className="  w-full h-13 flex-row items-center justify-between px-1 pt-2 bg-white  border-b border-gray-200">
                 <View className=" w-36 h-12 flex justify-center items-center -mt-5">
                     <Image source={Logo} className=" h-32 w-32 -ml-6" />
                 </View>
