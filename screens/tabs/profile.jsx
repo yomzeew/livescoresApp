@@ -3,13 +3,13 @@ import { Text, View, StatusBar, TouchableOpacity } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useNavigation } from "@react-navigation/native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import {Avatar} from "react-native-paper";
+import { Avatar } from "react-native-paper";
 import Logo from "../../assets/ldd.png";
 
 const Profile = () => {
-  const navigation = useNavigation()
+  const navigation = useNavigation();
   return (
-    <SafeAreaView className="  flex-1">
+    <SafeAreaView className="  flex-1 bg-white">
       <StatusBar barStyle="light-content" />
       <View className=" w-full h-12 bg-white flex justify-center items-center ">
         <View className="  w-[90%] flex-row justify-between  h-12">
@@ -23,14 +23,11 @@ const Profile = () => {
           </TouchableOpacity>
         </View>
       </View>
-      <View className=" w-full mt-4 flex justify-center items-center">
-        <View className=" w-[92%] h-44 bg-white flex-row rounded-2xl">
+      <View className=" w-full  mt-4 flex justify-center items-center">
+        <View className=" w-[96%] h-44 bg-gray-100 flex-row rounded-2xl">
           <View className=" w-[27%] h-full flex items-center justify-center -mt-8">
             <TouchableOpacity className="">
-              <Avatar.Image
-                size={60}
-                source={Logo}
-              />
+              <Avatar.Image size={60} source={Logo} />
             </TouchableOpacity>
           </View>
           <View className="  w-[72%] h-full pt-3">
@@ -44,7 +41,12 @@ const Profile = () => {
               </Text>
             </View>
             <View className=" mt-5">
-              <TouchableOpacity onPress={()=> {navigation.navigate('login')}} className=" bg-[#e8def7] h-10 w-24 ml-auto mr-9 rounded-3xl flex justify-center">
+              <TouchableOpacity
+                onPress={() => {
+                  navigation.navigate("login");
+                }}
+                className=" bg-[#e8def7] h-10 w-24 ml-auto mr-9 rounded-3xl flex justify-center"
+              >
                 <Text className=" text-center">SIGN IN</Text>
               </TouchableOpacity>
             </View>
@@ -52,7 +54,7 @@ const Profile = () => {
         </View>
       </View>
       <View className=" w-full mt-2 flex justify-center items-center">
-        <View className=" w-[92%] h-96 bg-white py-8 rounded-2xl">
+        <View className=" w-[96%] h-96 bg-gray-100 py-8 rounded-2xl">
           <TouchableOpacity className=" w-full  h-10 flex-row space-x-10 mb-4">
             <View className="mb-auto mt-auto pl-5">
               <MaterialCommunityIcons
