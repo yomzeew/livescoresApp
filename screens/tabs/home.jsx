@@ -11,11 +11,19 @@ const Home = () => {
     const navigation = useNavigation();
     const [array, setArray] = useState([""]);
     return (
-        <SafeAreaView className="bg-gray flex h-full w-full">
+// <<<<<<< HEAD
+//         <SafeAreaView className="bg-gray flex h-full w-full">
+//             <StatusBar barStyle="light-content" />
+//             <View className=" w-full h-13 flex-row items-center justify-between px-1 pt-2 bg-white">
+//                 <View className="w-36 h-12 flex justify-center items-center -mt-5">
+//                     <Image source={Logo} className="h-32 w-32 -ml-6" />
+// =======
+        <SafeAreaView className=" bg-gray flex h-full w-full bg-white">
             <StatusBar barStyle="light-content" />
-            <View className=" w-full h-13 flex-row items-center justify-between px-1 pt-2 bg-white">
-                <View className="w-36 h-12 flex justify-center items-center -mt-5">
-                    <Image source={Logo} className="h-32 w-32 -ml-6" />
+            <View className="  w-full h-13 flex-row items-center justify-between px-1 pt-2 bg-white  border-b border-gray-200">
+                <View className=" w-36 h-12 flex justify-center items-center -mt-5">
+                    <Image source={Logo} className=" h-32 w-32 -ml-6" />
+{/* >>>>>>> e635fbd0dec4a3cc639ea9972c67e093e5d9bdc5 */}
                 </View>
                 <View className=" w-32 h-12  flex-row justify-between items-center pr-3">
                     <TouchableOpacity>

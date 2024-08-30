@@ -9,28 +9,33 @@ import Dashboard from "./screens/tabs/dashboard";
 import Favourite from "./screens/components/favourite-screen";
 import Login from "./screens/components/Login";
 import Stats from "./screens/components/Stats";
+import PlayerInfoPage from "./screens/components/player-info";
 import Leagueinfo from "./screens/components/leagueinfo";
 
 export default function App() {
-    const Stack = createNativeStackNavigator();
-    return (
-        <NavigationContainer>
-            <Stack.Navigator
-                initialRouteName="onboarding"
-                screenOptions={{
-                    headerShown: false,
-                }}
-            >
-                <Stack.Screen name="onboarding" component={Onboarding} />
-                <Stack.Screen name="registration" component={Registration} />
-                <Stack.Screen name="registration-form" component={RegistrationForm} />
-                <Stack.Screen name="verification-screen" component={EmailVerification} />
-                <Stack.Screen name="dashboard" component={Dashboard} />
-                <Stack.Screen name="favourite-screen" component={Favourite} />
-                <Stack.Screen name="login" component={Login} />
-                <Stack.Screen name="stats" component={Stats} />
-                <Stack.Screen name="leagueinfo" component={Leagueinfo} />
-            </Stack.Navigator>
-        </NavigationContainer>
-    );
+  const Stack = createNativeStackNavigator();
+  return (
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="onboarding"
+        screenOptions={{
+          headerShown: false,
+        }}
+      >
+        <Stack.Screen name="onboarding" component={Onboarding} />
+        <Stack.Screen name="registration" component={Registration} />
+        <Stack.Screen name="registration-form" component={RegistrationForm} />
+        <Stack.Screen
+          name="verification-screen"
+          component={EmailVerification}
+        />
+        <Stack.Screen name="dashboard" component={Dashboard} />
+        <Stack.Screen name="favourite-screen" component={Favourite} />
+        <Stack.Screen name="login" component={Login} />
+        <Stack.Screen name="stats" component={Stats} />
+        <Stack.Screen name="player-info" component={PlayerInfoPage} />
+        <Stack.Screen name="leagueinfo" component={Leagueinfo} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 };
