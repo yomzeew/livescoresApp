@@ -26,7 +26,7 @@ const Dashboard = () => {
             iconName = "trophy-award"; // Changed icon name
           } else if (route.name === "Following") {
             iconName = "profile"; // Changed icon name
-          } else if (route.name === "Transfers") {
+          } else if (route.name === "Feeds") {
             iconName = "exchange"; // Changed icon name
           }
 
@@ -49,12 +49,12 @@ const Dashboard = () => {
         options={{ headerShown: false }}
       />
       <Tab.Screen
-        name="Transfers"
+        name="Feeds"
         component={Transfers}
         options={{ headerShown: false }}
       />
       <Tab.Screen
-        name="Following"
+        name="Settings"
         component={Profile}
         options={{ headerShown: false }}
       />

@@ -23,19 +23,19 @@ const Leagues = ({ navigation }) => {
     <SafeAreaView className="h-full w-full flex">
       <StatusBar barStyle="light-content" />
       <ScrollView>
-        <View className="  w-full flex-row space-x-5 h-36 pl-3">
-          <TouchableOpacity className=" bg-white w-24 h-28  border-1 border-gray-300  rounded-2xl mt-auto mb-auto flex justify-center items-center">
+        <View className="w-full flex-row space-x-5 h-36 pl-3">
+          <TouchableOpacity className="bg-white w-24 h-28  border-1 border-gray-300  rounded-2xl mt-auto mb-auto flex justify-center items-center">
             <View className="">
-              <Avatar.Image size={45} source={Logo} className=" mb-2" />
-              <Text className=" text-center font-medium text-sm">UEFA</Text>
-              <Text className=" text-center  font-medium text-sm">Ranking</Text>
+              <Avatar.Image size={45} source={Logo} className="bg-blue-900 mb-2" />
+              <Text className="text-center font-medium text-sm">UEFA</Text>
+              <Text className="text-center  font-medium text-sm">Ranking</Text>
             </View>
           </TouchableOpacity>
           <TouchableOpacity className=" bg-white w-24 h-28  border-1 border-gray-300 rounded-2xl mt-auto mb-auto flex justify-center items-center">
             <View className="">
-              <Avatar.Image size={45} source={Logo} className=" mb-2" />
-              <Text className=" text-center font-medium text-sm">FIFA</Text>
-              <Text className=" text-center  font-medium text-sm">Ranking</Text>
+              <Avatar.Image size={45} source={Logo} className="bg-blue-900 mb-2" />
+              <Text className="text-center font-medium text-sm">FIFA</Text>
+              <Text className="text-center  font-medium text-sm">Ranking</Text>
             </View>
           </TouchableOpacity>
         </View>

@@ -3,16 +3,15 @@ import * as AuthSession from 'expo-auth-session';
 import { useState } from 'react';
 
 export async function signInWithGoogle() {
-  const handleAuth = Google.useAuthRequest({
-    expoClientId: '225393677743-tqbrcf0k05lkbdo88tqpr1b6ho6brm4q.apps.googleusercontent.com',
-    iosClientId: '225393677743-9kg6hq5ttr51nek38vil62s4knvog7fq.apps.googleusercontent.com',
-    androidClientId: '225393677743-7hmi31naqhceq6no4rek438ohjr9kq39.apps.googleusercontent.com',
-    // webClientId: '<Your-Web-Client-ID>',
-    scopes: ['profile', 'email'],
-  }); 
-  const [request, response, promptAsync] = useState(handleAuth)
-
-  const result = await promptAsync()
+  // const handleAuth = 
+  const [request, response, promptAsync] = Google.useAuthRequest({
+     expoClientId: '225393677743-tqbrcf0k05lkbdo88tqpr1b6ho6brm4q.apps.googleusercontent.com',
+      iosClientId: '225393677743-9kg6hq5ttr51nek38vil62s4knvog7fq.apps.googleusercontent.com',
+     androidClientId: '225393677743-7hmi31naqhceq6no4rek438ohjr9kq39.apps.googleusercontent.com',
+     // webClientId: '<Your-Web-Client-ID>',
+     scopes: ['profile', 'email'],
+   }); 
+  const result = promptAsync();
   if (result.type === 'success') {
     return result.authentication;
   } else {
