@@ -9,13 +9,21 @@ import { useState } from "react";
 
 const Home = () => {
     const navigation = useNavigation();
-    const [array, setArray] = useState(["", "", "", "", "", "", "", "", ""]);
+    const [array, setArray] = useState([""]);
     return (
+// <<<<<<< HEAD
+//         <SafeAreaView className="bg-gray flex h-full w-full">
+//             <StatusBar barStyle="light-content" />
+//             <View className=" w-full h-13 flex-row items-center justify-between px-1 pt-2 bg-white">
+//                 <View className="w-36 h-12 flex justify-center items-center -mt-5">
+//                     <Image source={Logo} className="h-32 w-32 -ml-6" />
+// =======
         <SafeAreaView className=" bg-gray flex h-full w-full bg-white">
             <StatusBar barStyle="light-content" />
             <View className="  w-full h-13 flex-row items-center justify-between px-1 pt-2 bg-white  border-b border-gray-200">
                 <View className=" w-36 h-12 flex justify-center items-center -mt-5">
                     <Image source={Logo} className=" h-32 w-32 -ml-6" />
+{/* >>>>>>> e635fbd0dec4a3cc639ea9972c67e093e5d9bdc5 */}
                 </View>
                 <View className=" w-32 h-12  flex-row justify-between items-center pr-3">
                     <TouchableOpacity>
@@ -35,36 +43,36 @@ const Home = () => {
                         <Text className="text-xl font-bold pl-4">Your Team</Text>
                     </View>
                     <View className="w-screen mt-3 h-56 flex justify-center items-center">
-                        <TouchableOpacity className=" bg-blue-800 w-[90%] h-52 rounded-2xl ">
+                        <TouchableOpacity className="bg-blue-800 w-[90%] h-52 rounded-2xl ">
                             <View className="w-full h-10 flex-row  justify-between">
                                 <View>
                                     <Image source={Logo} className="w-32 h-8" />
                                 </View>
                                 <View className="p-2">
-                                    <Text className=" text-white">Match day 2</Text>
+                                    <Text className="text-white">Match day 2</Text>
                                 </View>
                             </View>
-                            <View className=" w-full h-36  flex-row justify-between items-center px-6">
+                            <View className="w-full h-36  flex-row justify-between items-center px-6">
                                 <View>
                                     <TouchableOpacity className="">
                                         <Avatar.Image size={55} source={Logo} />
                                     </TouchableOpacity>
-                                    <View className=" mt-2">
-                                        <Text className=" text-center font-bold text-white text-base">Team A</Text>
-                                        <Text className=" text-center">Home</Text>
+                                    <View className="mt-2">
+                                        <Text className="text-center font-bold text-white text-base">Team A</Text>
+                                        <Text className="text-center">Home</Text>
                                     </View>
                                 </View>
                                 <View className="  w-20 h-14 flex justify-center items-center">
-                                    <Text className=" text-white text-xl font-bold">11:13:47</Text>
-                                    <Text className=" text-gray-300">9:20pm</Text>
+                                    <Text className="text-white text-xl font-bold">11:13:47</Text>
+                                    <Text className="text-gray-300">9:20pm</Text>
                                 </View>
                                 <View>
                                     <TouchableOpacity className="">
                                         <Avatar.Image size={55} source={Logo} />
                                     </TouchableOpacity>
                                     <View className=" mt-2">
-                                        <Text className=" text-center text-white text-base font-bold">Team B</Text>
-                                        <Text className=" text-center">Away</Text>
+                                        <Text className="text-center text-white text-base font-bold">Team B</Text>
+                                        <Text className="text-center">Away</Text>
                                     </View>
                                 </View>
                             </View>
@@ -100,8 +108,11 @@ const Home = () => {
                         </TouchableOpacity>
                     </View>
                 </View>
-                <View className="mt-3 block space-y-3 px-4 mb-4">
-                    <Text className="text-lg font-bold">News</Text>
+                <View className="mt-5 block space-y-3 px-4 mb-4">
+                    <View className="flex flex-row justify-between">
+                    <Text className="text-lg font-bold">Feeds</Text>
+                    <TouchableOpacity onPress={()=>{navigation.navigate('dashboard')}} ><Text className="text-blue-900">See all</Text></TouchableOpacity>
+                    </View>
                     <View className="flex space-y-5">
                         {array.map((item, index) => (
                             <TouchableOpacity key={index} className="h-40 w-full shadow-md bg-zinc-100 rounded-2xl"></TouchableOpacity>
