@@ -38,6 +38,20 @@ const Leagues = ({ navigation }) => {
       <StatusBar barStyle="light-content" />
       <ScrollView>
         <View className="w-full flex-row space-x-5 h-36 pl-3">
+{/* <<<<<<< HEAD
+          <TouchableOpacity className="bg-white w-24 h-28  border-1 border-gray-300  rounded-2xl mt-auto mb-auto flex justify-center items-center">
+            <View className="">
+              <Avatar.Image size={45} source={Logo} className="bg-blue-900 mb-2" />
+              <Text className="text-center font-medium text-sm">UEFA</Text>
+              <Text className="text-center  font-medium text-sm">Ranking</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity className=" bg-white w-24 h-28  border-1 border-gray-300 rounded-2xl mt-auto mb-auto flex justify-center items-center">
+            <View className="">
+              <Avatar.Image size={45} source={Logo} className="bg-blue-900 mb-2" />
+              <Text className="text-center font-medium text-sm">FIFA</Text>
+              <Text className="text-center  font-medium text-sm">Ranking</Text>
+======= */}
           <TouchableOpacity className="bg-white w-24 h-28 border-1 border-gray-300 rounded-2xl mt-auto mb-auto flex justify-center items-center">
             <View>
               <Avatar.Image size={45} source={Logo} className="mb-2" />
@@ -50,6 +64,7 @@ const Leagues = ({ navigation }) => {
               <Avatar.Image size={45} source={Logo} className="mb-2" />
               <Text className="text-center font-medium text-sm">FIFA</Text>
               <Text className="text-center font-medium text-sm">Ranking</Text>
+{/* >>>>>>> e635fbd0dec4a3cc639ea9972c67e093e5d9bdc5 */}
             </View>
           </TouchableOpacity>
         </View>

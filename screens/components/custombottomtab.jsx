@@ -9,10 +9,10 @@ const getIconName = (routeName) => {
             return "home-outline";
         case "Leagues":
             return "trophy-outline";
-        case "Transfers":
-            return "currency-gbp";
-        case "Following":
-            return "star-outline";
+        case "Feeds":
+            return "bulletin-board";
+        case "Settings":
+            return "cog-outline";
     }
 };
 
