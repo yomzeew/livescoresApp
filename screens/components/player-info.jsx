@@ -45,13 +45,10 @@ export default function PlayerInfoPage({ navigation }) {
                         resizeMode="contain"
                         className="h-80 z-10 absolute left-24 bottom-0"
                     />
-                </View>
-                <View
-                    className="bg-white"
-                >
                     <ScrollView
                         horizontal={true}
                         showsHorizontalScrollIndicator={false}
+                        className="bg-white"
                     >
                         {tabData && tabData.map((row, index) => (
                             <TabButtons
@@ -62,6 +59,10 @@ export default function PlayerInfoPage({ navigation }) {
                             />
                         ))}
                     </ScrollView>
+                </View>
+                <View
+                    className="bg-white"
+                >
                     <ScrollView
                         className="bg-white"
                     >

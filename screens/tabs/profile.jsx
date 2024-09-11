@@ -7,7 +7,7 @@ import { Avatar } from "react-native-paper";
 import Logo from "../../assets/ldd.png";
 
 const Profile = () => {
-<<<<<<< HEAD
+// <<<<<<< HEAD
     const navigation = useNavigation();
     const getIcon = (name) => {
         switch (name) {
